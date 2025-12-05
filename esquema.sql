@@ -125,7 +125,7 @@ CREATE TABLE Comentario_Bike (
     aparencia VARCHAR2(20),
     acessorios VARCHAR2(20),
     pecas VARCHAR2(20),
-    texto_livre CLOB,
+    texto_livre VARCHAR2(4000),
     CONSTRAINT fk_comm_bike_aluguel FOREIGN KEY (aluguel_id) REFERENCES Aluguel(id_aluguel)
 );
 
