@@ -81,7 +81,7 @@ CREATE TABLE Aluguel (
     CONSTRAINT fk_aluguel_bike FOREIGN KEY (bike_n_registro) REFERENCES Bike(n_registro),
     CONSTRAINT fk_aluguel_usuario FOREIGN KEY (usuario_cpf) REFERENCES Usuario(cpf),
     CONSTRAINT fk_aluguel_ponto_ret FOREIGN KEY (ponto_retirada_id) REFERENCES Ponto(cod_ponto),
-    CONSTRAINT fk_aluguel_ponto_dev FOREIGN KEY (ponto_devolucao_id) REFERENCES Ponto(cod_ponto)
+    CONSTRAINT fk_aluguel_ponto_dev FOREIGN KEY (ponto_devolucao_id) REFERENCES Ponto(cod_ponto),
     CONSTRAINT chk_status_devolucao CHECK (
         (status = 'CONCLUIDO' AND ponto_devolucao_id IS NOT NULL AND data_hora_fim IS NOT NULL) OR
         (status = 'EM_ANDAMENTO' AND ponto_devolucao_id IS NULL AND data_hora_fim IS NULL) OR
