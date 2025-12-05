@@ -10,7 +10,6 @@ DB_USER = 'system'
 DB_PASS = 'oracle'
 DB_DSN = 'localhost:1521/xe'
 
-# --- FUNÇÕES AUXILIARES DE VALIDAÇÃO ---
 def validar_cpf(cpf):
     """Valida se o CPF tem 11 dígitos numéricos"""
     return cpf.isdigit() and len(cpf) == 11
@@ -91,7 +90,6 @@ def conectar_banco():
     except oracledb.Error as e:
         sys.exit(f"[ERRO CRÍTICO] Conexão falhou: {e}")
 
-# --- FUNÇÕES PRINCIPAIS COM VALIDAÇÕES ---
 def cadastrar_usuario(conn):
     print("\n--- CADASTRO UNIFICADO (USUÁRIO + CARTÃO) ---")
     
@@ -163,7 +161,7 @@ def cadastrar_usuario(conn):
                 break
             print("[ERRO] Saldo deve ser um número positivo (ex: 50.00).")
         
-        # Validade do cartão (mínimo 1 mês, máximo 5 anos)
+        # Validade do cartão
         while True:
             validade = input("Validade do Cartão (DD/MM/AAAA): ").strip()
             if validar_data(validade):
