@@ -5,6 +5,8 @@ import re
 import sys
 from datetime import datetime as dt
 
+# Grupo 12
+
 # --- CONFIGURAÇÃO ---
 DB_USER = 'system'
 DB_PASS = 'oracle'
